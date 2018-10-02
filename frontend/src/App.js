@@ -2,8 +2,21 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bulma/css/bulma.css';
+import Blog from './components/blog';
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      name: '',
+      link: '',
+      critical: '',
+      date: '',
+      error: null
+    };
+  }
+
   render() {
     return (
       <div>
@@ -12,7 +25,7 @@ class App extends Component {
           Some really cool stuff is going to be on here
           </div>
             <a href="#hello"> going down to about me</a>
-            <a href='#about_me'>goig down to the other about me</a>
+            <a href='#hi'>goig down to the other about me</a>
         </div>
 
 
@@ -43,7 +56,11 @@ Suspendisse potenti. Donec mollis eros risus, sed commodo ipsum porttitor sit am
       </div>
 
       <div id="hello">Hello from the other side</div>
+      <div id="hi">
+        <Blog/>
       </div>
+    </div>
+
     );
   }
 }
